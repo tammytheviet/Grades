@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 /**
  * @author Tam Lai Nguyen
  * @version 1.0
- * @description
+ * @description This class creates a table "teacher" in the database "grades". In the table are the following columns: id, name
  */
 
 @Entity
@@ -18,25 +18,25 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer do_id;
+    private Integer te_id;
  
-    private String do_name;
+    private String te_name;
 
-    public Integer getDo_id() {
-        return do_id;
+    public Integer getTe_id() {
+        return te_id;
     }
 
-    public void setDo_id(Integer do_id) {
-        this.do_id = do_id;
+    public void setTe_id(Integer te_id) {
+        this.te_id = te_id;
     }
 
-    public String getDo_name() {
-        return do_name;
+    public String getTe_name() {
+        return te_name;
     }
 
-    public void setDo_name(String do_name) {
-        this.do_name = do_name;
+    public void setTe_name(String te_name) {
+        this.te_name = te_name;
     }
-     
+    
  }
  
