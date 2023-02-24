@@ -18,25 +18,25 @@ import jakarta.validation.constraints.NotEmpty;
  */
 
 @Entity
-@Table(name = "subject")
-public class Subject {
+@Table(name = "grade")
+public class Grade {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotEmpty(message = "Id may not be empty")
     private Integer id;
 
-    @NotEmpty(message = "Name may not be empty")
-    private String name;
+    @NotEmpty(message = "Grade may not be empty")
+    private Double grade;
 
-    @NotEmpty(message = "Type may not be empty")
-    private String type;
+    @NotEmpty(message = "Weight may not be empty")
+    private Double weight;
 
     @ManyToOne
     @JsonBackReference
-	@JoinColumn(name = "teacher", nullable = false)
-    @NotEmpty(message = "Type may not be empty")
-    private Teacher teacher;
+	@JoinColumn(name = "subject", nullable = false)
+    @NotEmpty(message = "Subject may not be empty")
+    private Subject subject;
 
     public Integer getId() {
         return id;
@@ -46,28 +46,29 @@ public class Subject {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Double getGrade() {
+        return grade;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGrade(Double grade) {
+        this.grade = grade;
     }
 
-    public String getType() {
-        return type;
+    public Double getWeight() {
+        return weight;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setWeight(Double weight) {
+        this.weight = weight;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
+    
 
 }

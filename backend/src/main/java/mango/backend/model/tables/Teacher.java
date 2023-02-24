@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 
 /**
  * @author Tam Lai Nguyen
@@ -18,8 +19,10 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotEmpty(message = "Id may not be empty")
     private Integer id;
  
+    @NotEmpty(message = "Name may not be empty")
     private String name;
 
     public Integer getId() {
