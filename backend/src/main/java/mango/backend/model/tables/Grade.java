@@ -19,11 +19,11 @@ import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "grade")
-public class Grade {
+public class Grade 
+{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty(message = "Id may not be empty")
     private Integer id;
 
     @NotEmpty(message = "Grade may not be empty")
@@ -38,37 +38,44 @@ public class Grade {
     @NotEmpty(message = "Subject may not be empty")
     private Subject subject;
 
-    public Integer getId() {
+    public Integer getId()
+    {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Integer id)
+    {
         this.id = id;
     }
 
-    public Double getGrade() {
+    public Double getGrade()
+    {
         return grade;
     }
 
-    public void setGrade(Double grade) {
+    public void setGrade(Double grade)
+    {
         this.grade = grade;
     }
 
-    public Double getWeight() {
+    public Double getWeight()
+    {
         return weight;
     }
 
-    public void setWeight(Double weight) {
+    public void setWeight(Double weight)
+    {
         this.weight = weight;
     }
 
-    public Subject getSubject() {
+    public Subject getSubject()
+    {
         return subject;
     }
 
-    public void setSubject(Subject subject) {
+    public void setSubject(Subject subject)
+    {
         this.subject = subject;
     }
-    
 
 }

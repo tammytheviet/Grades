@@ -4,6 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import mango.backend.model.tables.Grade;
 
-public interface GradeRepository extends CrudRepository<Grade, Integer>{
+public interface GradeRepository extends CrudRepository<Grade, Integer>
+{
     
 }

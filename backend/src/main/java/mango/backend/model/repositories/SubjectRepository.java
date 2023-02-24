@@ -4,6 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import mango.backend.model.tables.Subject;
 
-public interface SubjectRepository extends CrudRepository<Subject, Integer>{
+public interface SubjectRepository extends CrudRepository<Subject, Integer>
+{
     
 }

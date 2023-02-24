@@ -15,31 +15,48 @@ import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "teacher")
-public class Teacher {
+public class Teacher 
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty(message = "Id may not be empty")
     private Integer id;
  
-    @NotEmpty(message = "Name may not be empty")
-    private String name;
+    @NotEmpty(message = "Surname may not be empty")
+    private String surname;
 
-    public Integer getId() {
+    @NotEmpty(message = "Lastname may not be empty")
+    private String lastname;
+
+    public Integer getId()
+    {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Integer id)
+    {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getSurname()
+    {
+        return surname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSurname(String surname)
+    {
+        this.surname = surname;
     }
-    
+
+    public String getLastname()
+    {
+        return lastname;
+    }
+
+    public void setLastname(String lastname)
+    {
+        this.lastname = lastname;
+    }
+
  }
  
