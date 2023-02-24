@@ -18,24 +18,24 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer te_id;
+    private Integer id;
  
-    private String te_name;
+    private String name;
 
-    public Integer getTe_id() {
-        return te_id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setTe_id(Integer te_id) {
-        this.te_id = te_id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getTe_name() {
-        return te_name;
+    public String getName() {
+        return name;
     }
 
-    public void setTe_name(String te_name) {
-        this.te_name = te_name;
+    public void setName(String name) {
+        this.name = name;
     }
     
  }
