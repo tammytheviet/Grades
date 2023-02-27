@@ -22,8 +22,8 @@ public class Teacher
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
  
-    @NotEmpty(message = "Surname may not be empty")
-    private String surname;
+    @NotEmpty(message = "firstname may not be empty")
+    private String firstname;
 
     @NotEmpty(message = "Lastname may not be empty")
     private String lastname;
@@ -38,14 +38,14 @@ public class Teacher
         this.id = id;
     }
 
-    public String getSurname()
+    public String getFirstname()
     {
-        return surname;
+        return firstname;
     }
 
-    public void setSurname(String surname)
+    public void Firstname(String firstname)
     {
-        this.surname = surname;
+        this.firstname = firstname;
     }
 
     public String getLastname()
