@@ -28,7 +28,7 @@ public class TeacherController
     private TeacherRepository teacherRepo;
 
     @GetMapping
-    public ResponseEntity<Iterable<Teacher>> getAllRegions() 
+    public ResponseEntity<Iterable<Teacher>> getAllTeachers() 
     {
 
         Iterable<Teacher> teachers = null;
@@ -83,7 +83,7 @@ public class TeacherController
 
 	}
 
-	@DeleteMapping //DELETE ONLY Request
+	@DeleteMapping
     public ResponseEntity<String> deleteTeacher(@QueryParam Teacher teacher) 
 	{
 
@@ -100,4 +100,5 @@ public class TeacherController
 		return ResponseEntity.ok("Deleted");
 
     }
+
 }
