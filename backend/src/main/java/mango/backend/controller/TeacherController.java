@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
-import mango.backend.exceptions.couldnotbedeleted.TeacherCouldNotBeDeletedException;
-import mango.backend.exceptions.couldnotbesaved.TeacherCouldNotBeSavedException;
-import mango.backend.exceptions.load.TeacherLoadException;
-import mango.backend.model.repositories.TeacherRepository;
-import mango.backend.model.tables.Teacher;
+import mango.backend.exceptions.*;
+import mango.backend.model.*;
 
 @RestController
 @RequestMapping(path = "/teacher")

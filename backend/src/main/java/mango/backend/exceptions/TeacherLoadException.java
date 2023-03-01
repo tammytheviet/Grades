@@ -1,4 +1,4 @@
-package mango.backend.exceptions.load;
+package mango.backend.exceptions;
 
 public class TeacherLoadException extends RuntimeException 
 {

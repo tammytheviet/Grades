@@ -1,8 +1,6 @@
-package mango.backend.model.repositories;
+package mango.backend.model;
 
 import org.springframework.data.repository.CrudRepository;
-
-import mango.backend.model.tables.Grade;
 
 public interface GradeRepository extends CrudRepository<Grade, Integer>
 {

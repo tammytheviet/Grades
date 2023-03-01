@@ -1,4 +1,4 @@
-package mango.backend.model.tables;
+package mango.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -18,25 +18,25 @@ import jakarta.validation.constraints.NotEmpty;
  */
 
 @Entity
-@Table(name = "grade")
-public class Grade 
+@Table(name = "subject")
+public class Subject 
 {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty(message = "Grade may not be empty")
-    private Double grade;
+    @NotEmpty(message = "Name may not be empty")
+    private String name;
 
-    @NotEmpty(message = "Weight may not be empty")
-    private Double weight;
+    @NotEmpty(message = "Type may not be empty")
+    private String type;
 
     @ManyToOne
     @JsonBackReference
-	@JoinColumn(name = "subject", nullable = false)
-    @NotEmpty(message = "Subject may not be empty")
-    private Subject subject;
+	@JoinColumn(name = "teacher", nullable = false)
+    @NotEmpty(message = "Type may not be empty")
+    private Teacher teacher;
 
     public Integer getId()
     {
@@ -48,34 +48,34 @@ public class Grade
         this.id = id;
     }
 
-    public Double getGrade()
+    public String getName()
     {
-        return grade;
+        return name;
     }
 
-    public void setGrade(Double grade)
+    public void setName(String name)
     {
-        this.grade = grade;
+        this.name = name;
     }
 
-    public Double getWeight()
+    public String getType()
     {
-        return weight;
+        return type;
     }
 
-    public void setWeight(Double weight)
+    public void setType(String type)
     {
-        this.weight = weight;
+        this.type = type;
     }
 
-    public Subject getSubject()
+    public Teacher getTeacher()
     {
-        return subject;
+        return teacher;
     }
 
-    public void setSubject(Subject subject)
+    public void setTeacher(Teacher teacher)
     {
-        this.subject = subject;
+        this.teacher = teacher;
     }
 
 }

@@ -1,4 +1,4 @@
-package mango.backend.model.tables;
+package mango.backend.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

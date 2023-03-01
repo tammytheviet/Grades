@@ -1,4 +1,4 @@
-package mango.backend.exceptions.couldnotbedeleted;
+package mango.backend.exceptions;
 
 public class SubjectCouldNotBeDeletedException extends RuntimeException
 {

@@ -1,4 +1,4 @@
-package mango.backend.exceptions.couldnotbesaved;
+package mango.backend.exceptions;
 
 public class TeacherCouldNotBeSavedException extends RuntimeException
 {
