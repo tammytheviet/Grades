@@ -2,23 +2,13 @@ package mango.backend.controller;
 
 import java.util.Optional;
 
-import mango.backend.model.tables.*;
-import mango.backend.model.repositories.*;
+import mango.backend.model.*;
+import mango.backend.exceptions.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-import mango.backend.exceptions.*;
-
 
 @RestController
 @RequestMapping(path = "/subject")
@@ -70,7 +60,8 @@ public class SubjectController
 	}
 
     @PostMapping(path = "/{teacher}")
-    public ResponseEntity<String> addNewSubject(@PathVariable(value = "teacher") Integer teacherId, @Valid @RequestBody Subject subject) 
+    public ResponseEntity<String> addNewSubject(@PathVariable(value = "teacher") Integer teacherId, 
+												@Valid @RequestBody Subject subject) 
 	{
 		Optional<Teacher> teacher = teacherRepo.findById(teacherId);
 
@@ -78,6 +69,9 @@ public class SubjectController
 		{
 			throw new TeacherNotFoundException(teacherId);
 		}
+
+		subject.setTeacher(teacher.get());
+
 		try 
 		{
 			subjectRepo.save(subject);

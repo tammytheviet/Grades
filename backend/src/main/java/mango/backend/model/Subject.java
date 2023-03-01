@@ -1,14 +1,6 @@
 package mango.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
 /**
@@ -33,7 +25,6 @@ public class Subject
     private String type;
 
     @ManyToOne
-    @JsonBackReference
 	@JoinColumn(name = "teacher", nullable = false)
     @NotEmpty(message = "Type may not be empty")
     private Teacher teacher;
